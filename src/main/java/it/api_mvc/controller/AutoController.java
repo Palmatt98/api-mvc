@@ -39,4 +39,11 @@ public class AutoController {
         List<Auto> listAuto = autoService.getAutosByMarca(marca);
         return new ResponseEntity<>(listAuto, HttpStatus.OK);
     }
+
+    @PutMapping("/auto")
+    public ResponseEntity<Void> updateAuto(@RequestBody Auto auto) {
+        HttpStatus result = autoService.updateAuto(auto);
+        return new ResponseEntity<>(result);
+
+    }
 }
